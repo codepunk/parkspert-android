@@ -23,6 +23,8 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.serialization)
+    alias(libs.plugins.kotlin.parcelize)
 }
 
 android {
@@ -81,10 +83,19 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+    allprojects {
+        tasks.withType(JavaCompile::class.java) {
+            options.compilerArgs.add("-Xlint:unchecked")
+            options.compilerArgs.add("-Xlint:deprecation")
+        }
+    }
 }
 
 dependencies {
+    // --------------------------------------------------
     // Supplied by New Project template
+    // --------------------------------------------------
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -101,8 +112,61 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    // --------------------------------------------------
     // Added by Codepunk
+    // --------------------------------------------------
+
     // Hilt
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
+
+    // Navigation
+    implementation(libs.navigation.compose)
+
+    // Material 3 Adaptive
+    implementation(libs.material3.adaptive)
+    implementation(libs.material3.adaptive.layout)
+    implementation(libs.material3.adaptive.navigation)
+    implementation(libs.adaptive.navigation.suite)
+
+    // Splashscreen
+    implementation(libs.splashscreen)
+
+    // KotlinX
+    implementation(libs.kotlinx.collections.immutable)
+    implementation(libs.kotlinx.datetime)
+    implementation(libs.kotlinx.serialization)
+    implementation(libs.kotlinx.serialization.converter)
+
+    // Arrow
+    implementation(libs.arrow.core)
+    implementation(libs.arrow.core.retrofit)
+    implementation(libs.arrow.fx.coroutines)
+
+    // Okhttp / Retrofit
+    implementation(libs.okhttp)
+    implementation(libs.retrofit)
+
+    // Room
+    implementation(libs.room.ktx)
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiler)
+    implementation(libs.room.paging)
+
+    // Accompanist
+    implementation(libs.accompanist)
+
+    // Datastore
+    implementation(libs.datastore.preferences)
+    implementation(libs.datastore)
+
+    // Paging
+    implementation(libs.paging)
+    implementation(libs.paging.compose)
+
+    // Coil
+    implementation(libs.coil)
+    implementation(libs.coil.networking)
+    implementation(libs.coil.gif)
 }
