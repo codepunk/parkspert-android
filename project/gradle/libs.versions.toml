@@ -1,4 +1,5 @@
 [versions]
+# Supplied by New Project template
 agp = "8.7.1"
 kotlin = "2.0.0"
 coreKtx = "1.13.1"
@@ -7,9 +8,15 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.6"
 activityCompose = "1.9.3"
-composeBom = "2024.04.01"
+composeBom = "2024.10.00"
+
+# Added by Codepunk
+# See https://github.com/google/ksp/releases
+# to find which ksp version works with with which version of kotlin
+ksp = "2.0.0-RC3-1.0.20"
 
 [libraries]
+# Supplied by New Project template
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -25,8 +32,12 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
-[plugins]
-android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+# Added by Codepunk
 
+[plugins]
+# Supplied by New Project template
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+# Added by Codepunk
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
