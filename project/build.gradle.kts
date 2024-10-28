@@ -22,4 +22,5 @@ plugins {
 
     // Added by Codepunk
     alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.compose.compiler) apply false
 }

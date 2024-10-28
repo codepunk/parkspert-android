@@ -21,6 +21,7 @@ plugins {
 
     // Added by Codepunk
     alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {

@@ -13,7 +13,7 @@ composeBom = "2024.10.00"
 # Added by Codepunk
 # See https://github.com/google/ksp/releases
 # to find which ksp version works with with which version of kotlin
-ksp = "2.0.0-RC3-1.0.20"
+ksp = "2.0.0-1.0.22"
 
 [libraries]
 # Supplied by New Project template
@@ -41,3 +41,4 @@ jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = 
 
 # Added by Codepunk
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
