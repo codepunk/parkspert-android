@@ -14,14 +14,10 @@
  * limitations under the License.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-plugins {
-    // Supplied by New Project template
-    alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.jetbrains.kotlin.android) apply false
+package com.codepunk.parkspert
 
-    // Added by Codepunk
-    alias(libs.plugins.ksp) apply false
-    alias(libs.plugins.hilt) apply false
-    alias(libs.plugins.compose.compiler) apply false
-}
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class ParkspertApp : Application()

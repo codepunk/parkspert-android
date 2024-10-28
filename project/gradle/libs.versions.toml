@@ -13,6 +13,7 @@ composeBom = "2024.10.00"
 # Added by Codepunk
 # See https://github.com/google/ksp/releases
 # to find which ksp version works with with which version of kotlin
+hilt = "2.51.1"
 ksp = "2.0.0-1.0.22"
 
 [libraries]
@@ -33,6 +34,8 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
 # Added by Codepunk
+hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 
 [plugins]
 # Supplied by New Project template
@@ -40,5 +43,6 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
 # Added by Codepunk
-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
